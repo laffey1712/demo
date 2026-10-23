@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>让我们一起努力 · 鲸图视觉</title>
+<meta name="description" content="告诉我们你想把品牌带向何方。我们会教你如何到达那里。">
+<link rel="stylesheet" href="style.css">
+<style>
+.contact-page{padding:72px 0 96px}
+.contact-page .inner{max-width:880px;margin:0 auto;padding:0 32px}
+.contact-page h1{font-size:52px;line-height:1.1;font-weight:600;letter-spacing:-.02em;color:#111}
+.contact-page .sub{margin-top:20px;font-size:15px;color:#4a4a4f;line-height:1.8;max-width:620px}
+form.cf{margin-top:56px}
+.cf .row{display:grid;grid-template-columns:1fr 1fr;gap:26px 32px}
+.cf .field{margin-bottom:26px}
+.cf .field.half{margin-bottom:0}
+.cf label{display:block;font-size:13px;font-weight:500;color:#111;margin-bottom:8px;letter-spacing:.01em}
+.cf label .req{color:#111}
+.cf input,.cf textarea{width:100%;background:#f6f6f5;border:1px solid #d8d8d4;border-radius:4px;padding:14px 15px;font-family:var(--sans);font-size:14px;color:#111;transition:border-color .18s,background .18s;outline:none}
+.cf input{height:52px}
+.cf textarea{min-height:190px;resize:vertical;line-height:1.7;padding-top:14px}
+.cf input::placeholder,.cf textarea::placeholder{color:#a3a39d}
+.cf input:focus,.cf textarea:focus{background:#fff;border-color:#111}
+.cf .err{display:none;font-size:12px;color:#b91c1c;margin-top:7px}
+.cf .field.bad input,.cf .field.bad textarea{border-color:#b91c1c;background:#fdf6f6}
+.cf .field.bad .err{display:block}
+.cf .actions{display:flex;justify-content:flex-end;align-items:center;gap:16px;margin-top:6px}
+.cf .hint{font-size:12px;color:#8a8a85;margin-right:auto}
+.cf button.submit{background:#111;color:#fff;border:0;border-radius:3px;padding:16px 46px;font-family:var(--sans);font-size:14px;font-weight:500;letter-spacing:.06em;cursor:pointer;transition:.2s}
+.cf button.submit:hover{background:#333}
+.cf button.submit:disabled{background:#8a8a85;cursor:wait}
+.ok-panel{display:none;border:1px solid #d8d8d4;background:#fafaf8;border-radius:6px;padding:44px 40px;margin-top:56px;text-align:center}
+.ok-panel .tick{width:44px;height:44px;border-radius:50%;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:20px}
+.ok-panel h2{font-size:22px;font-weight:600;color:#111}
+.ok-panel p{font-size:14px;color:#5f5f5a;margin-top:10px;line-height:1.8}
+.ok-panel a{display:inline-block;margin-top:22px;font-size:13px;border-bottom:1px solid #111;padding-bottom:2px}
+.fb-panel{display:none;border:1px solid #e7d9b8;background:#fdf9ef;border-radius:6px;padding:22px 24px;margin-top:24px;font-size:13px;color:#4a431f;line-height:1.8}
+.fb-panel b{font-weight:500}
+.fb-panel code{display:block;white-space:pre-wrap;word-break:break-all;background:#fff;border:1px solid #e7d9b8;border-radius:4px;padding:12px;margin-top:10px;font-size:12px;max-height:200px;overflow:auto;font-family:ui-monospace,Menlo,Consolas,monospace}
+.copy-btn{margin-top:12px;background:#111;color:#fff;border:0;border-radius:3px;padding:10px 20px;font-family:var(--sans);font-size:12px;letter-spacing:.04em;cursor:pointer;transition:.2s}
+.copy-btn:hover{background:#333}
+.copy-btn.done{background:#15803d}
+@media(max-width:760px){
+  .contact-page{padding:44px 0 64px}
+  .contact-page h1{font-size:34px}
+  .contact-page .inner{padding:0 20px}
+  .cf .row{grid-template-columns:1fr;gap:0}
+  .cf .field.half{margin-bottom:26px}
+  .cf .actions{flex-direction:column-reverse;align-items:stretch;gap:14px}
+  .cf .hint{margin:0;text-align:center}
+  .cf button.submit{width:100%;padding:16px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="row">
+    <a class="brand" href="index.html"><span class="mark">鲸</span>鲸图视觉</a>
+    <nav class="menu">
+      <a href="index.html#services">服务</a>
+      <a href="index.html#works">案例</a>
+      <a href="index.html#about">关于</a>
+      <a href="contact.html" style="color:var(--ink)">联系</a>
+    </nav>
+  </div>
+</header>
+
+<main class="contact-page">
+  <div class="inner">
+    <h1>让我们一起努力</h1>
+    <p class="sub">告诉我们你想把品牌带向何方。我们会教你如何到达那里。</p>
+
+    <form class="cf" id="cf" novalidate>
+      <div class="row">
+        <div class="field half">
+          <label for="firstName">名字</label>
+          <input type="text" id="firstName" name="firstName" autocomplete="given-name">
+        </div>
+        <div class="field half">
+          <label for="lastName">姓氏</label>
+          <input type="text" id="lastName" name="lastName" autocomplete="family-name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="field half">
+          <label for="email">电子邮件<span class="req">*</span></label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+          <div class="err">请填写有效的电子邮箱</div>
+        </div>
+        <div class="field half">
+          <label for="company">公司名称<span class="req">*</span></label>
+          <input type="text" id="company" name="company" autocomplete="organization" required>
+          <div class="err">请填写公司名称</div>
+        </div>
+      </div>
+      <div class="field">
+        <label for="website">网站网址<span class="req">*</span></label>
+        <input type="text" id="website" name="website" placeholder="https://" required>
+        <div class="err">请填写网址，例如 amazon.com/dp/xxxx</div>
+      </div>
+      <div class="field">
+        <label for="phone">电话号码</label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel">
+      </div>
+      <div class="field">
+        <label for="details">项目详情</label>
+        <textarea id="details" name="details" placeholder="想做哪些图？大概几个 SKU？期望什么时候上线？"></textarea>
+      </div>
+
+      <div class="actions">
+        <span class="hint" id="hint">带 * 的为必填项</span>
+        <button type="submit" class="submit" id="submitBtn">提交</button>
+      </div>
+
+      <div class="fb-panel" id="fbPanel">
+        <b>已为你打开邮件客户端</b> —— 如果没反应，说明这台设备没设置邮件程序。请把下面这段内容复制后发到我们的邮箱：
+        <code id="fbText"></code>
+        <button type="button" class="copy-btn" id="copyBtn">复制这段内容</button>
+      </div>
+    </form>
+
+    <div class="ok-panel" id="okPanel">
+      <div class="tick">✓</div>
+      <h2>收到了，谢谢你</h2>
+      <p id="okMsg">我们会在 1 个工作日内回复你，并附上一份针对你 listing 的视觉诊断。</p>
+      <a href="index.html">← 返回首页</a>
+    </div>
+  </div>
+</main>
+
+<footer><div class="row">
+  <span>© 2026 鲸图视觉 Whalepic Studio · 保留所有权利</span>
+  <div class="socials"><a href="#">微信</a><a href="#">小红书</a><a href="#">站酷</a><a href="#">Behance</a></div>
+  <span>样例 · 联系页</span>
+</div></footer>
+
+<script>
+/* ===================================================================
+   表单提交配置 —— 只改 FORM_ACCESS_KEY 这一行
+   -------------------------------------------------------------------
+   默认走 Web3Forms：客户一提交，你注册邮箱立刻收到完整内容（免费 250 条/月）。
+   步骤：打开 web3forms.com → 用「你想收通知的邮箱」注册 → 拿到 access key → 粘到下面。
+   没填 key 时自动退回 mailto 兜底，表单照样能用，不会报错。
+   =================================================================== */
+var FORM_ENDPOINT = "https://api.web3forms.com/submit";
+var FORM_ACCESS_KEY = "";   // ← 把你的 Web3Forms access key 粘到这里
+var MAIL_TO = "hello@jingtu.studio";
+
+(function(){
+  var form = document.getElementById('cf');
+  var okPanel = document.getElementById('okPanel');
+  var fbPanel = document.getElementById('fbPanel');
+  var fbText = document.getElementById('fbText');
+  var btn = document.getElementById('submitBtn');
+  var hint = document.getElementById('hint');
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  function markBad(el, bad){
+    el.closest('.field').classList.toggle('bad', bad);
+  }
+
+  function collect(){
+    var d = {};
+    ['firstName','lastName','email','company','website','phone','details'].forEach(function(k){
+      d[k] = (document.getElementById(k).value || '').trim();
+    });
+    return d;
+  }
+
+  function validate(d){
+    var bad = false;
+    markBad(document.getElementById('email'), !EMAIL_RE.test(d.email));
+    if(!EMAIL_RE.test(d.email)) bad = true;
+    markBad(document.getElementById('company'), d.company === '');
+    if(d.company === '') bad = true;
+    markBad(document.getElementById('website'), d.website === '');
+    if(d.website === '') bad = true;
+    return !bad;
+  }
+
+  ['email','company','website'].forEach(function(k){
+    var el = document.getElementById(k);
+    el.addEventListener('input', function(){
+      if(el.closest('.field').classList.contains('bad')){
+        if(k === 'email' ? EMAIL_RE.test(el.value.trim()) : el.value.trim() !== ''){
+          el.closest('.field').classList.remove('bad');
+        }
+      }
+    });
+  });
+
+  function asText(d){
+    return '名字：' + d.firstName + '\n'
+         + '姓氏：' + d.lastName + '\n'
+         + '电子邮件：' + d.email + '\n'
+         + '公司名称：' + d.company + '\n'
+         + '网站网址：' + d.website + '\n'
+         + '电话号码：' + d.phone + '\n'
+         + '项目详情：' + d.details;
+  }
+
+  function done(msg){
+    form.style.display = 'none';
+    document.getElementById('okMsg').textContent = msg || '我们会在 1 个工作日内回复你，并附上一份针对你 listing 的视觉诊断。';
+    okPanel.style.display = 'block';
+    okPanel.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var d = collect();
+    if(!validate(d)){
+      var firstBad = form.querySelector('.field.bad input, .field.bad textarea');
+      if(firstBad) firstBad.focus();
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = '提交中…';
+    hint.textContent = '正在发送，请稍候';
+
+    if(FORM_ACCESS_KEY){
+      fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json', 'Accept':'application/json'},
+        body: JSON.stringify({
+          access_key: FORM_ACCESS_KEY,
+          subject: '官网咨询：' + (d.company || d.email),
+          from_name: '鲸图视觉官网',
+          name: (d.lastName + d.firstName).trim(),
+          email: d.email,
+          company: d.company,
+          website: d.website,
+          phone: d.phone,
+          message: d.details
+        })
+      }).then(function(r){ return r.json(); }).then(function(res){
+        if(res && res.success){ done(); }
+        else { throw new Error('发送失败'); }
+      }).catch(function(){
+        btn.disabled = false;
+        btn.textContent = '提交';
+        hint.textContent = '发送失败，请重试或直接邮我们';
+        fbText.textContent = asText(d);
+        fbPanel.style.display = 'block';
+      });
+    } else {
+      var body = asText(d);
+      fbText.textContent = body;
+      var url = 'mailto:' + MAIL_TO
+              + '?subject=' + encodeURIComponent('官网咨询：' + (d.company || d.email))
+              + '&body=' + encodeURIComponent(body);
+      window.location.href = url;
+      setTimeout(function(){
+        btn.disabled = false;
+        btn.textContent = '提交';
+        hint.textContent = '带 * 的为必填项';
+        fbPanel.style.display = 'block';
+        fbPanel.scrollIntoView({behavior:'smooth', block:'center'});
+      }, 900);
+    }
+  });
+
+  var copyBtn = document.getElementById('copyBtn');
+  copyBtn.addEventListener('click', function(){
+    var txt = fbText.textContent;
+    function ok(){
+      copyBtn.textContent = '已复制';
+      copyBtn.classList.add('done');
+      setTimeout(function(){ copyBtn.textContent = '复制这段内容'; copyBtn.classList.remove('done'); }, 2200);
+    }
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = txt;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); ok(); } catch(err){}
+      document.body.removeChild(ta);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(ok).catch(fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+</body></html>
